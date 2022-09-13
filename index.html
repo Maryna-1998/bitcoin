@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            color: #3e623e;
+            background-color: aliceblue;
+
+        }
+        .col{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            margin: -150px 0 0 -150px;
+
+        }
+
+        .group-input input, .group-input label{
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+
+        }
+
+        .group-input input{
+            height: 30px;
+            background-color: #dddddd;        
+        }
+        
+
+        .group-input {
+            margin-bottom: 20px;
+        }
+
+        .btn-result {
+            width: 100%;
+            height: 30px;
+            background-color: bisque;
+        }
+
+        #result {
+            text-align: center;
+        }
+    </style>
+    <div class="row">
+        <div class="col">
+            <div>
+                <div class="group-input">
+                    <label for="currency">What is Bitcoin price today?</label>
+                    <input id="currency" type="number" min="0" step="0.01">
+                </div>
+                
+                <div class="group-input">
+                    <label for="sum">How much $ do you have?</label>
+                    <input id="sum" type="number" min="0" step="0.01">
+                </div>                
+                
+                <div class="group-input">
+                    <button class="btn-result" onclick="calculate()">OK</button>
+                </div>
+                
+                <div class="group-input">
+                    <p id="result">You can buy 0 BTC</p>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            let currency = document.getElementById("currency").value
+            let sum = document.getElementById("sum").value
+            let result = document.getElementById("result")
+
+            result.innerHTML = `You can buy ${sum/currency} BTC`
+            
+
+           
+            
+        }
+    </script>
+</body>
+
+</html>
